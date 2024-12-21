@@ -1,9 +1,8 @@
 // You'll need an API key from https://www.weatherapi.com
 
+let debounce;
 const API_CONFIG = {
-    key: '',
-    postalcode: '90001',
-    aqi: 'no'
+    key: ''
 }
 
 function displayData(data) {
@@ -43,8 +42,8 @@ function displayData(data) {
     cloud.textContent = `Cloud: ${data.current.cloud}%`;
 }
 
-function fetchData() {
-    const url = `https://api.weatherapi.com/v1/current.json?key=${API_CONFIG.key}&q=${API_CONFIG.postalcode}&aqi=${API_CONFIG.aqi}`;
+function fetchData(postalcode) {
+    const url = `https://api.weatherapi.com/v1/current.json?key=${API_CONFIG.key}&q=${postalcode}&aqi=no`;
     
     fetch(url)
         .then(response => {
@@ -61,6 +60,15 @@ function fetchData() {
         });
 }
 
+function citySearch() {
+    clearTimeout(debounce);
+
+    debounce = setTimeout(() => {
+        const cityName = document.getElementById('searchbox').value;
+        fetchData(cityName);
+    }, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetchData();
+    fetchData('90001');
 });

@@ -9,34 +9,43 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div style="position: absolute; top: 0; left: 0; right: 0; width: 100%; text-align: center;">
-        <h2>You need an API key from <a href="https://www.weatherapi.com" target="_blank">here</a></h2>
-    </div>
-    <div class="container">
-        <div class="basic-info">
-            <h1>Weather in <span id="country"></span></h1>
-            <img src="" alt="An icon of the current weather" id="weather-icon">
+    <div class="wrapper">
+        <div class="search-bar">
+            <input type="search" placeholder="Search" id="searchbox" required oninput="citySearch()">
         </div>
-        <div class="temp">
+        <div class="container">
+            <div class="basic-info">
+                <h1>Weather in <span id="country"></span></h1>
+                <img src="" alt="An icon of the current weather" id="weather-icon">
+            </div>
+            <div class="temp">
+                <p>
+                    <span id="celsius"></span>
+                    <span id="fahrenheit"></span>
+                    <br>
+                    <span id="feels-celsius"></span>
+                    <span id="feels-fahrenheit"></span>
+                </p>
+            </div>
+            <div class="wind">
+                <p>
+                    <span id="wind-mph"></span>
+                    <span id="wind-kph"></span>
+                    <span id="wind-dir"></span>
+                </p>
+            </div>
+            <div class="random">
+                <p>
+                    <span id="humidity"></span>
+                    <span id="cloud"></span>
+                </p>
+            </div>
+        </div>
+        <div class="search-info">
             <p>
-                <span id="celsius"></span>
-                <span id="fahrenheit"></span>
+                Pass US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name.
                 <br>
-                <span id="feels-celsius"></span>
-                <span id="feels-fahrenheit"></span>
-            </p>
-        </div>
-        <div class="wind">
-            <p>
-                <span id="wind-mph"></span>
-                <span id="wind-kph"></span>
-                <span id="wind-dir"></span>
-            </p>
-        </div>
-        <div class="random">
-            <p>
-                <span id="humidity"></span>
-                <span id="cloud"></span>
+                You&rsquo;ll need an API key from <a href="https://www.weatherapi.com" target="_blank">WeatherAPI</a>
             </p>
         </div>
     </div>
