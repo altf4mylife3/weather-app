@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", Verdana, Arial, sans-serif;
+  background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+  color: #333;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+.container .basic-info {
+  margin-bottom: 24px;
+}
+.container .basic-info h1 {
+  font-size: 26px;
+  color: #00509e;
+  margin-bottom: 16px;
+}
+.container .basic-info img {
+  width: 100px;
+  height: 100px;
+  margin: 12px 0;
+  border-radius: 50%;
+  border: 2px solid #3498db;
+}
+.container .basic-info .temp, .container .basic-info .wind, .container .basic-info .random {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+.container .basic-info .temp p, .container .basic-info .wind p, .container .basic-info .random p {
+  font-size: 18px;
+  color: #555;
+  margin: 0 8px;
+}
+.container .basic-info #celsius, .container .basic-info #fahrenheit, .container .basic-info #feels-celsius, .container .basic-info #feels-fahrenheit {
+  font-weight: 700;
+  color: #d35400;
+}
+.container .basic-info #wind-mph, .container .basic-info #wind-kph, .container .basic-info #wind-dir {
+  font-weight: 700;
+  color: #3498db;
+}
+.container .basic-info #humidity, .container .basic-info #cloud {
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+h2 {
+  font-size: 25px;
+}
+h2 a {
+  color: #00509e;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+  .container {
+    padding: 16px;
+  }
+  .container .basic-info h1 {
+    font-size: 22px;
+  }
+  .container .basic-info img {
+    width: 70px;
+    height: 70px;
+  }
+  .container .basic-info .temp, .container .basic-info .wind, .container .basic-info .random {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container .basic-info .temp p, .container .basic-info .wind p, .container .basic-info .random p {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

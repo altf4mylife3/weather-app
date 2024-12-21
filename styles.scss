@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', Verdana, Arial, sans-serif;
+    background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+    color: #333;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .basic-info {
+        margin-bottom: 24px;
+
+        h1 {
+            font-size: 26px;
+            color: #00509e;
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 12px 0;
+            border-radius: 50%;
+            border: 2px solid #3498db;
+        }
+
+        .temp, .wind, .random {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0;
+
+            p {
+                font-size: 18px;
+                color: #555;
+                margin: 0 8px;
+            }
+        }
+
+        #celsius, #fahrenheit, #feels-celsius, #feels-fahrenheit {
+            font-weight: 700;
+            color: #d35400;
+        }
+
+        #wind-mph, #wind-kph, #wind-dir {
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        #humidity, #cloud {
+            font-weight: 700;
+            color: #2ecc71;
+        }
+    }
+}
+
+h2 {
+    font-size: 25px;
+
+    a { color: #00509e; }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 16px;
+
+        .basic-info {
+            h1 {
+                font-size: 22px;
+            }
+
+            img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .temp, .wind, .random {
+                flex-direction: column;
+                align-items: flex-start;
+
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
